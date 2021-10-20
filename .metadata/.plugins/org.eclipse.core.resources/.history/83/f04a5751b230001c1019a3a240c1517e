@@ -1,0 +1,24 @@
+package com.xworkz.wrapperclasses;
+
+public class BooleanStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    
+		Boolean book=true;
+		Boolean bag=false;
+		System.out.println(book.compareTo(book));
+		System.out.println(book.compare(book,bag));
+		System.out.println(book.equals(book));
+		System.out.println(book.logicalAnd(book,bag));
+		System.out.println(book.valueOf(bag));
+		
+		
+		
+		//Byte
+		Byte mi=3;
+		Byte moto=6;
+		System.out.println(mi.compareTo(mi));
+	}
+
+}

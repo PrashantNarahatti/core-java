@@ -1,0 +1,31 @@
+package com.xworkz.core;
+
+public class WrapperStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name="Xwork";
+		boolean contain=name.contains("no");
+		System.out.println("contains wo"+contain);
+		
+		char[] chars= {'X','W','O','R','K','Z'};
+		String convertedString=String.copyValueOf(chars);
+		System.out.println(convertedString);
+		
+		String branch=new String("BTM");
+		boolean containsTM=branch.contains("TM");
+		System.out.println(branch.contains("TM"));
+		
+		String place="BGK";
+		String famousFor="Durga Temple";
+		String bgkFamousFor=place.concat(famousFor);
+		System.out.println(bgkFamousFor);
+		
+		String nagappa="Nagappa";
+		String nagamma=new String("Nagamma");
+		boolean same=nagappa.equals(nagamma);
+		System.out.println("SAME"+same);
+
+}
+}

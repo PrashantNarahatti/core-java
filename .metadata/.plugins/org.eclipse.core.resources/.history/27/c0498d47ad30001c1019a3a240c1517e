@@ -1,0 +1,13 @@
+package com.xworkz.wrapperclasses;
+
+public class FloatStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    
+		Float phonePrice=18000.0f;
+	     Float phonePrice1=18500.0f;
+	     System.out.println(phonePrice1.SIZE);
+	}
+
+}

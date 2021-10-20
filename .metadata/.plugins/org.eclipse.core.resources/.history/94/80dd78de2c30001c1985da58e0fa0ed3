@@ -1,0 +1,11 @@
+package com.xworkz.earbud;
+
+public class DustbinStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Integer chappalSize=9;
+     chappalSize.intValue();
+	}
+
+}

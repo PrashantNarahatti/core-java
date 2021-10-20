@@ -1,0 +1,12 @@
+package com.xworkz.BikeStarter;
+
+public class MarketStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String marketname="D- Mart";
+		String sub=marketname.substring(0,3);
+		System.out.println(sub);
+	}
+
+}

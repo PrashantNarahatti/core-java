@@ -1,0 +1,10 @@
+package com.xworkz.earbud;
+
+public class StringStarter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
