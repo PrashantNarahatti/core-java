@@ -118,7 +118,7 @@ public class RulesStarter {
 		AfricaCitizen africaCitizen1=new AfricaCitizen();
 		System.out.println(africaCitizen1.valideAge());
 		System.out.println(africaCitizen1.validId());
-		System.out.println(africaCitizen1.validLicence());
+		System.out.println(africaCitizen1.validLicence())
 		System.out.println(africaCitizen1.licenseNo());
 		System.out.println(africaCitizen1.validInsurance());
 		System.out.println(africaCitizen1.validAge('m', 21));
