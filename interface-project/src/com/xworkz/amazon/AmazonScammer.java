@@ -18,7 +18,7 @@ public class AmazonScammer {
 		
 		ArrayAmazonCartDAO arrayAmazonCartDAO=new ArrayAmazonCartDAO();
 		System.out.println(arrayAmazonCartDAO.save(cartDTOs1));
-		System.out.println(arrayAmazonCartDAO.findByName("mi"));
+		System.out.println(arrayAmazonCartDAO.findByName("MI"));
 		arrayAmazonCartDAO.displayAllCartDetails();
 		
 	}

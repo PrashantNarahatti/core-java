@@ -1,9 +1,9 @@
-package com.xworkz.amazon.dao;
+package com.xworkz.flipkart.dao;
 
-public class ArrayAmazonCartDAO implements AmazonCartDAO{
-	
-	 private CartDTO[] dtos= new CartDTO[100];;
-     private int counter;
+public class ArrayFlipkartCartDAO implements FlipkartCartDAO {
+
+	private CartDTO[] dtos = new CartDTO[100];;
+	private int counter;
 
 	@Override
 	public boolean save(CartDTO cartDTO) {
@@ -14,7 +14,7 @@ public class ArrayAmazonCartDAO implements AmazonCartDAO{
 	@Override
 	public CartDTO findByName(String name) {
 		System.out.println("invoked finding name");
-		
+
 		return null;
 	}
 
@@ -42,11 +42,5 @@ public class ArrayAmazonCartDAO implements AmazonCartDAO{
 	@Override
 	public void displayAllCartDetails() {
 		System.out.println("invoked displayAllCartDetails ");
-		
 	}
-		
-	}
-		
-	
-
-
+}
