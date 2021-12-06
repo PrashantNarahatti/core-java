@@ -7,4 +7,12 @@
     <fullyQualifiedTypeName name="com.xworkz.deepavali.Constants.PoliceDept"/>
     <fullyQualifiedTypeName name="com.xworkz.deepavali.Police"/>
     <fullyQualifiedTypeName name="com.xworkz.deepavali.crime.CrimePolice"/>
+    <fullyQualifiedTypeName name="com.xworkz.email.EmailValidationException"/>
+    <fullyQualifiedTypeName name="com.xwork.pan.PanValidationException"/>
+    <fullyQualifiedTypeName name="com.xworkz.email.EmailOperator"/>
+    <fullyQualifiedTypeName name="com.xwork.pan.ValidPanException"/>
+    <fullyQualifiedTypeName name="com.xwork.pan.PanOperator"/>
+    <fullyQualifiedTypeName name="com.xworkz.vehicleNumber.VehicleNumberOperator"/>
+    <fullyQualifiedTypeName name="com.xwork.pan.StorageFullRunTimeException"/>
+    <fullyQualifiedTypeName name="com.xworkz.vehicleNumber.ValidVehicleRegisterException"/>
 </qualifiedTypeNameHistroy>
