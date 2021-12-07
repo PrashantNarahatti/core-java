@@ -2,6 +2,7 @@ package com.xworkz.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class CarScammer {
 
@@ -76,9 +77,83 @@ public class CarScammer {
 		collection.add(carName5);
 		collection.add(carName6);
 		collection.add(carName7);
-
+		collection.add(carName8);
+		collection.add(carName9);
+		collection.add(carName10);
+		collection.add(carName11);
+		collection.add(carName12);
+		collection.add(carName13);
+		collection.add(carName14);
+		collection.add(carName15);
+		collection.add(carName16);
+		collection.add(carName17);
+		collection.add(carName18);
+		collection.add(carName19);
+		collection.add(carName20);
+		collection.add(carName21);
+		collection.add(carName22);
+		collection.add(carName23);
+		collection.add(carName24);
+		collection.add(carName25);
+		collection.add(carName26);
+		collection.add(carName27);
+		collection.add(carName28);
+		collection.add(carName29);
+		collection.add(carName30);
+		collection.add(carName31);
+		collection.add(carName32);
+		collection.add(carName33);
+		collection.add(carName34);
+		collection.add(carName35);
+		collection.add(carName36);
+		collection.add(carName37);
+		collection.add(carName38);
+		collection.add(carName39);
+		collection.add(carName40);
+		collection.add(carName41);
+		collection.add(carName42);
+		collection.add(carName43);
+		collection.add(carName44);
+		collection.add(carName45);
+		collection.add(carName46);
+		collection.add(carName47);
+		collection.add(carName48);
+		collection.add(carName49);
+		collection.add(carName50);
+		collection.add(carName51);
+		collection.add(carName52);
+		collection.add(carName53);
+		collection.add(carName54);
+		collection.add(carName55);
+		collection.add(carName56);
+		collection.add(carName57);
+		collection.add(carName58);
+		collection.add(carName59);
+		collection.add(carName60);
+		
 		System.out.println(collection.toString());
 		System.out.println("Number of Actor Name added :" + collection.size());
+
+		Iterator<String> itr = collection.iterator();
+
+		boolean check = itr.hasNext();
+		System.out.println(check);
+
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+
+		boolean check1 = collection.remove(carName55);
+		System.out.println(check1);
+
+		boolean checkout = collection.contains(carName55);
+		System.out.println(checkout);
+
+		boolean contained = collection.isEmpty();
+		System.out.println(contained);
+
+		collection.clear();
+		System.err.println("cleared");
 
 	}
 

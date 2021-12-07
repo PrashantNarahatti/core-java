@@ -2,6 +2,7 @@ package com.xworkz.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class FestivalsScammer {
 
@@ -77,8 +78,81 @@ public class FestivalsScammer {
 		collection.add(festival7);
 		collection.add(festival8);
 		collection.add(festival9);
-
+		collection.add(festival10);
+		collection.add(festival11);
+		collection.add(festival12);
+		collection.add(festival13);
+		collection.add(festival14);
+		collection.add(festival15);
+		collection.add(festival16);
+		collection.add(festival17);
+		collection.add(festival18);
+		collection.add(festival19);
+		collection.add(festival20);
+		collection.add(festival21);
+		collection.add(festival22);
+		collection.add(festival23);
+		collection.add(festival24);
+		collection.add(festival25);
+		collection.add(festival26);
+		collection.add(festival27);
+		collection.add(festival28);
+		collection.add(festival29);
+		collection.add(festival30);
+		collection.add(festival31);
+		collection.add(festival32);
+		collection.add(festival33);
+		collection.add(festival34);
+		collection.add(festival35);
+		collection.add(festival36);
+		collection.add(festival37);
+		collection.add(festival38);
+		collection.add(festival39);
+		collection.add(festival40);
+		collection.add(festival41);
+		collection.add(festival42);
+		collection.add(festival43);
+		collection.add(festival44);
+		collection.add(festival45);
+		collection.add(festival46);
+		collection.add(festival47);
+		collection.add(festival48);
+		collection.add(festival49);
+		collection.add(festival50);
+		collection.add(festival51);
+		collection.add(festival52);
+		collection.add(festival53);
+		collection.add(festival54);
+		collection.add(festival55);
+		collection.add(festival56);
+		collection.add(festival57);
+		collection.add(festival58);
+		collection.add(festival59);
+		collection.add(festival60);
+		
+		
 		System.out.println(collection.size());
+		
+		Iterator<String> itr = collection.iterator();
+
+		boolean check = itr.hasNext();
+		System.out.println(check);
+
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+
+		boolean check1 = collection.remove(festival30);
+		System.out.println(check1);
+
+		boolean checkout = collection.contains(festival30);
+		System.out.println(checkout);
+
+		boolean contained = collection.isEmpty();
+		System.out.println(contained);
+
+		collection.clear();
+		System.err.println("cleared");
 	}
 
 }

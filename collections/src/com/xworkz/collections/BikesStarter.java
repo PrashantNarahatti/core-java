@@ -2,6 +2,7 @@ package com.xworkz.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class BikesStarter {
 
@@ -76,10 +77,83 @@ public class BikesStarter {
 		collection.add(bikeName5);
 		collection.add(bikeName6);
 		collection.add(bikeName7);
-
+		collection.add(bikeName8);
+		collection.add(bikeName9);
+		collection.add(bikeName10);
+		collection.add(bikeName11);
+		collection.add(bikeName12);
+		collection.add(bikeName13);
+		collection.add(bikeName14);
+		collection.add(bikeName15);
+		collection.add(bikeName16);
+		collection.add(bikeName17);
+		collection.add(bikeName18);
+		collection.add(bikeName19);
+		collection.add(bikeName20);
+		collection.add(bikeName21);
+		collection.add(bikeName22);
+		collection.add(bikeName23);
+		collection.add(bikeName24);
+		collection.add(bikeName25);
+		collection.add(bikeName26);
+		collection.add(bikeName27);
+		collection.add(bikeName28);
+		collection.add(bikeName29);
+		collection.add(bikeName30);
+		collection.add(bikeName31);
+		collection.add(bikeName32);
+		collection.add(bikeName33);
+		collection.add(bikeName34);
+		collection.add(bikeName35);
+		collection.add(bikeName36);
+		collection.add(bikeName37);
+		collection.add(bikeName38);
+		collection.add(bikeName39);
+		collection.add(bikeName40);
+		collection.add(bikeName41);
+		collection.add(bikeName42);
+		collection.add(bikeName43);
+		collection.add(bikeName44);
+		collection.add(bikeName45);
+		collection.add(bikeName46);
+		collection.add(bikeName47);
+		collection.add(bikeName48);
+		collection.add(bikeName49);
+		collection.add(bikeName50);
+		collection.add(bikeName51);
+		collection.add(bikeName52);
+		collection.add(bikeName53);
+		collection.add(bikeName54);
+		collection.add(bikeName55);
+		collection.add(bikeName56);
+		collection.add(bikeName57);
+		collection.add(bikeName58);
+		collection.add(bikeName59);
+		collection.add(bikeName60);
+		
 		System.out.println(collection.toString());
 		System.out.println("Number of Actor Name added :" + collection.size());
+		
+		Iterator<String> itr = collection.iterator();
 
+		boolean check = itr.hasNext();
+		System.out.println(check);
+
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+
+		boolean check1 = collection.remove(bikeName50);
+		System.out.println(check1);
+
+		boolean checkout = collection.contains(bikeName50);
+		System.out.println(checkout);
+
+		boolean contained = collection.isEmpty();
+		System.out.println(contained);
+
+		collection.clear();
+		System.err.println("cleared");
 	}
 
 }
