@@ -153,19 +153,9 @@ public class LipStickScammer {
 		collection.clear();
 		System.err.println("cleared");}
 
-		}
+		
 
-		boolean check1 = collection.remove(langName35);
-		System.out.println(check1);
-
-		boolean checkout = collection.contains(langName35);
-		System.out.println(checkout);
-
-		boolean contained = collection.isEmpty();
-		System.out.println(contained);
-
-		collection.clear();
-		System.err.println("cleared");
+		
 
 	}
-}
+

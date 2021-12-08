@@ -1,0 +1,80 @@
+package com.xworkz.collect.companies;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class ProductBasedCompanies {
+	public static void main(String[] args) {
+
+		List<String> collection = new ArrayList<String>();
+		collection.add("Microsoft");
+		collection.add("Oracle");
+		collection.add("VMware");
+		collection.add("Amdocs");
+		collection.add("HCL");
+		collection.add("Uber");
+		collection.add("Hewlett-Packed");
+		collection.add("Zomato");
+		collection.add("TCS");
+		collection.add("Paypal");
+
+		System.err.println("LIST");
+		System.out.println(collection.size());
+		Collections.sort(collection);
+		System.err.println("acending order....");
+		Iterator<String> itr = collection.iterator();
+		while (itr.hasNext()) {
+			String type = itr.next();
+			System.out.println(type);
+		}
+
+		System.err.println("----------------------------");
+		System.err.println("decending...........");
+		Collections.sort(collection, Collections.reverseOrder());
+		Iterator<String> itr1 = collection.iterator();
+		while (itr1.hasNext()) {
+			String type = itr1.next();
+			System.out.println(type);
+		}
+
+		System.err.println("~~~~~~~~~~~");
+
+		System.err.println("SET");
+		Set<String> set1 = new TreeSet<String>();
+		set1.add("Microsoft");
+		set1.add("Oracle");
+		set1.add("VMware");
+		set1.add("Amdocs");
+		set1.add("HCL");
+		set1.add("Uber");
+		set1.add("Hewlett-Packed");
+		set1.add("Zomato");
+		set1.add("TCS");
+		set1.add("Paypal");
+
+		System.out.println(set1.size());
+		System.err.println("acending order....");
+
+		Iterator<String> itr2 = set1.iterator();
+		while (itr2.hasNext()) {
+			System.out.println(itr2.next());
+		}
+
+		System.err.println("----------------------------");
+		System.err.println("descending order....");
+
+		Collections.sort(collection, Collections.reverseOrder());
+		Iterator<String> itr3 = set1.iterator();
+		while (itr3.hasNext()) {
+			String type1 = itr3.next();
+			System.out.println(type1);
+		}
+
+	}
+
+
+}
