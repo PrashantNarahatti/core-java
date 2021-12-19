@@ -15,4 +15,15 @@
     <fullyQualifiedTypeName name="com.xworkz.vehicleNumber.VehicleNumberOperator"/>
     <fullyQualifiedTypeName name="com.xwork.pan.StorageFullRunTimeException"/>
     <fullyQualifiedTypeName name="com.xworkz.vehicleNumber.ValidVehicleRegisterException"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.workz.collect.dto.beer.BeerDAO"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>
