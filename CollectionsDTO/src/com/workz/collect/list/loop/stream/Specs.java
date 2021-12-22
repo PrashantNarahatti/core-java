@@ -7,10 +7,7 @@ import java.util.stream.Stream;
 public class Specs {
 
 	public static void main(String[] args) {
-		Stream<String> specs = Stream.of("Ray-Ban", "Fastrack", "IDEE", "Polaroid", "Vogue", "Police", "Prada",
-				"Oakley", "Lapectus", "Gucci", "CK Jeans", "Image", "Scott", "Lacoste", "Esprit", "Carrera", "Coach",
-				"Fendi", "Nike", "Dior");
-
+		
 		System.err.println("ascending order");
 
 		Stream<String> specs1 = Stream.of("Ray-Ban", "Fastrack", "IDEE", "Polaroid", "Vogue", "Police", "Prada",
@@ -28,7 +25,11 @@ public class Specs {
 
 		List<String> temp1 = specs2.sorted((e1, e2) -> e2.compareTo(e1)).collect(Collectors.toList());
 		temp1.forEach((e) -> System.out.println("Specs :" + e));
+		
+		System.err.println("============");
 
+		List<String> temp = specs.sorted().map((e) ->e.toLowerCase()).collect(Collectors.toList());
+		temp.forEach((e) -> System.out.println("Specs :" + e));
 	}
 
 }

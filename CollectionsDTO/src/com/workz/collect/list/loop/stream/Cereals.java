@@ -25,6 +25,9 @@ public class Cereals {
 
 		List<String> temp1 = cereals2.sorted((e1, e2) -> e2.compareTo(e1)).collect(Collectors.toList());
 		temp1.forEach((e) -> System.out.println("Cereals :" + e));
+		
+		List<String> temp = cereals1.sorted().map((e) ->e.toLowerCase()).collect(Collectors.toList());
+		temp.forEach((e) -> System.out.println("Cereals:" + e));
 
 	}
 
