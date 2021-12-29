@@ -14,12 +14,12 @@ public class PresidentDTOScammer {
 	public static void main(String[] args) {
 		//List<String> list = new ArrayList<String>();
 
-		PresidentDTO presidentDTO1 = new PresidentDTO("1", "Sarvepalli Radhakrishnan", "India",
+		PresidentDTO presidentDTO1 = new PresidentDTO(1, "Sarvepalli Radhakrishnan", "India",
 				"13 May 1962 - 13 May 1967");
-		PresidentDTO presidentDTO2 = new PresidentDTO("2", "Rajendra Prasad ", " India", " 13 May 1957 - 13 May 1962");
-		PresidentDTO presidentDTO3 = new PresidentDTO("3", "John Admas", "India", "4 March 1797 - 4 March 1801 ");
-		PresidentDTO presidentDTO4 = new PresidentDTO("4", "James Madison", "America ", "4 March 1807 - 4 March 1817 ");
-		PresidentDTO presidentDTO5 = new PresidentDTO("5", "Zakir Hussain", "India ", "13 May 1967 - 3 May 1969 ");
+		PresidentDTO presidentDTO2 = new PresidentDTO(2, "Rajendra Prasad ", " India", " 13 May 1957 - 13 May 1962");
+		PresidentDTO presidentDTO3 = new PresidentDTO(3, "John Admas", "India", "4 March 1797 - 4 March 1801 ");
+		PresidentDTO presidentDTO4 = new PresidentDTO(4, "James Madison", "America ", "4 March 1807 - 4 March 1817 ");
+		PresidentDTO presidentDTO5 = new PresidentDTO(5, "Zakir Hussain", "India ", "13 May 1967 - 3 May 1969 ");
 
 		//List<String> temp1 = Stream.of(presidentDTO1, presidentDTO2, presidentDTO3, presidentDTO4, presidentDTO5)
 			//	.map((e) -> e.getTenure()).collect(Collectors.toList());
@@ -53,7 +53,8 @@ public class PresidentDTOScammer {
 				
 		};
 		
-		president.steam().filter((e)->e.getName)
+		president.stream().filter((e)->e.getName().equals("Sarvepalli Radhakrishnan"))
+		.sorted(comparator).forEach((dto)-> System.out.println(dto));
 		
 		//president.forEach((e) -> System.out.println( e));
 
