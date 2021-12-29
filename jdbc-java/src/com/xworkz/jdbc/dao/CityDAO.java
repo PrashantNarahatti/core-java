@@ -5,23 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.xworkz.jdbc.constant.ClubConstant;
-import com.xworkz.jdbc.dto.ClubDTO;
+import com.xworkz.jdbc.constant.CityConstant;
+import com.xworkz.jdbc.dto.CityDTO;
 
-public class ClubDAO {
-
-	public boolean save(ClubDTO clubDTO) {
+public class CityDAO {
+	public boolean save(CityDTO cityDTO) {
 		System.out.println("saving...");
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(CityConstant.MYSQL_URL, CityConstant.MYSQL_NAME,
+					CityConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "insert into club values(" + clubDTO.getId() + ",'" + clubDTO.getName() + "','"
-						+ clubDTO.getLocation() + "'," + clubDTO.getBouncers() + "," + clubDTO.getEntryFee() + ","
-						+ clubDTO.isActive() + ")";
+				String sql = "insert into city_details values(" + cityDTO.getId() + ",'" + cityDTO.getName() + "','"
+						+ cityDTO.getPopulation() + "','" + cityDTO.getFamousFor() + "')";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
@@ -54,16 +52,16 @@ public class ClubDAO {
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(CityConstant.MYSQL_URL, CityConstant.MYSQL_NAME,
+					CityConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from club where c_id=10";
+				String sql = "delete from city_details where c_id=3";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
-
-				return true;
+				if (rowsAffected == 1)
+					return true;
 
 			}
 		} catch (ClassNotFoundException e) {

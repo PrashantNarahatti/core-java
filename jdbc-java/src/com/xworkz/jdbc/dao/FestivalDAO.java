@@ -5,23 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.xworkz.jdbc.constant.ClubConstant;
-import com.xworkz.jdbc.dto.ClubDTO;
+import com.xworkz.jdbc.constant.FestivalConstant;
+import com.xworkz.jdbc.dto.FestivalDTO;
 
-public class ClubDAO {
-
-	public boolean save(ClubDTO clubDTO) {
+public class FestivalDAO {
+	public boolean save(FestivalDTO festivalDTO) {
 		System.out.println("saving...");
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(FestivalConstant.MYSQL_URL, FestivalConstant.MYSQL_NAME,
+					FestivalConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "insert into club values(" + clubDTO.getId() + ",'" + clubDTO.getName() + "','"
-						+ clubDTO.getLocation() + "'," + clubDTO.getBouncers() + "," + clubDTO.getEntryFee() + ","
-						+ clubDTO.isActive() + ")";
+				String sql = "insert into festival_details values(" + festivalDTO.getId() + ",'" + festivalDTO.getName() + "','"
+						+ festivalDTO.getDate() + "','"+festivalDTO.getState() +"')";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
@@ -54,15 +52,15 @@ public class ClubDAO {
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(FestivalConstant.MYSQL_URL, FestivalConstant.MYSQL_NAME,
+					FestivalConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from club where c_id=10";
+				String sql = "delete from festival_details where f_id=3";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
-
+                if(rowsAffected==1)
 				return true;
 
 			}

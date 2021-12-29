@@ -5,23 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.xworkz.jdbc.constant.ClubConstant;
-import com.xworkz.jdbc.dto.ClubDTO;
+import com.xworkz.jdbc.constant.CountryConstant;
+import com.xworkz.jdbc.dto.CountryDTO;
 
-public class ClubDAO {
-
-	public boolean save(ClubDTO clubDTO) {
+public class CountryDAO {
+	public boolean save(CountryDTO countryDTO) {
 		System.out.println("saving...");
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(CountryConstant.MYSQL_URL, CountryConstant.MYSQL_NAME,
+					CountryConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "insert into club values(" + clubDTO.getId() + ",'" + clubDTO.getName() + "','"
-						+ clubDTO.getLocation() + "'," + clubDTO.getBouncers() + "," + clubDTO.getEntryFee() + ","
-						+ clubDTO.isActive() + ")";
+				String sql = "insert into  country_details values(" + countryDTO.getId() + ",'" + countryDTO.getName() + "',"
+						+ countryDTO.getCode() + ",'"+countryDTO.getContinent() +"')";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
@@ -54,15 +52,15 @@ public class ClubDAO {
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(CountryConstant.MYSQL_URL, CountryConstant.MYSQL_NAME,
+					CountryConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from club where c_id=10";
+				String sql = "delete from  country_details where c_id=3";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
-
+                if(rowsAffected==1)
 				return true;
 
 			}
@@ -84,5 +82,6 @@ public class ClubDAO {
 
 		return false;
 	}
+
 
 }

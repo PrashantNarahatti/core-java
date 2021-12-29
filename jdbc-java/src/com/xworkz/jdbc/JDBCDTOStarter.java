@@ -6,11 +6,11 @@ import com.xworkz.jdbc.dto.ClubDTO;
 public class JDBCDTOStarter {
 
 	public static void main(String[] args) {
-		ClubDTO clubDTO=new ClubDTO(11,"Pranu club","btmlayout",10,1000,true);
+		ClubDTO clubDTO=new ClubDTO(11,"Pranu club","btmlayout",10,1000d,true);
 		ClubDAO clubDAO=new ClubDAO();
 		//clubDAO.save(clubDTO);
 		
-		boolean delete=clubDAO.delete(10);
+		boolean delete=clubDAO.deleteById(10);
 		System.out.println(delete);
 	}
 

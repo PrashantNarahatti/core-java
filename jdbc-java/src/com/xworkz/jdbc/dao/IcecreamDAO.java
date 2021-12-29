@@ -5,23 +5,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.xworkz.jdbc.constant.ClubConstant;
-import com.xworkz.jdbc.dto.ClubDTO;
+import com.xworkz.jdbc.constant.IcecreamConstant;
+import com.xworkz.jdbc.dto.IcecreamDTO;
 
-public class ClubDAO {
 
-	public boolean save(ClubDTO clubDTO) {
+public class IcecreamDAO {
+	public boolean save(IcecreamDTO icecreamDTO) {
 		System.out.println("saving...");
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(IcecreamConstant.MYSQL_URL, IcecreamConstant.MYSQL_NAME,
+					IcecreamConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "insert into club values(" + clubDTO.getId() + ",'" + clubDTO.getName() + "','"
-						+ clubDTO.getLocation() + "'," + clubDTO.getBouncers() + "," + clubDTO.getEntryFee() + ","
-						+ clubDTO.isActive() + ")";
+				String sql = "insert into  icecream_details values(" + icecreamDTO.getId() + ",'" + icecreamDTO.getFlavour() + "','"
+						+ icecreamDTO.getName() + "',"+icecreamDTO.getPrice() +")";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
@@ -54,15 +53,15 @@ public class ClubDAO {
 		Connection mysql = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			mysql = DriverManager.getConnection(ClubConstant.MYSQL_URL, ClubConstant.MYSQL_NAME,
-					ClubConstant.MYSQL_PASSWORD);
+			mysql = DriverManager.getConnection(IcecreamConstant.MYSQL_URL, IcecreamConstant.MYSQL_NAME,
+					IcecreamConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from club where c_id=10";
+				String sql = "delete from  icecream_details where cream_id=3";
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
-
+                if(rowsAffected==1)
 				return true;
 
 			}
