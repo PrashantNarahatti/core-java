@@ -58,7 +58,7 @@ public class ClubDAO {
 					ClubConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from club where c_id=10";
+				String sql = "delete from club where c_id="+id;
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);

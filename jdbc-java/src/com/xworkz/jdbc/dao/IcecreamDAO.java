@@ -57,7 +57,7 @@ public class IcecreamDAO {
 					IcecreamConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from  icecream_details where cream_id=3";
+				String sql = "delete from  icecream_details where cream_id="+id;
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);

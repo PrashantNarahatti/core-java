@@ -57,7 +57,7 @@ public class StateDAO {
 					StateConstant.MYSQL_PASSWORD);
 			if (!mysql.isClosed()) {
 				System.out.println("connection open");
-				String sql = "delete from  state_details where s_id=3";
+				String sql = "delete from  state_details where s_id="+id;
 				Statement statement = mysql.createStatement();
 				System.out.println(sql);
 				int rowsAffected = statement.executeUpdate(sql);
