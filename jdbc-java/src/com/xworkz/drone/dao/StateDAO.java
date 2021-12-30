@@ -1,4 +1,4 @@
-package com.xworkz.jdbc.dao;
+package com.xworkz.drone.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -75,7 +75,6 @@ public class StateDAO {
 		Connection mysql = DBUtil.createConnection();
 
 		try {
-			
 
 			String sql = "select * from State_details where s_id=?";
 			PreparedStatement statement = mysql.prepareStatement(sql);

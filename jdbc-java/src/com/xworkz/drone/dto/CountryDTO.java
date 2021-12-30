@@ -1,28 +1,28 @@
-package com.xworkz.jdbc.dto;
+package com.xworkz.drone.dto;
 
 import java.io.Serializable;
 
-public class StateDTO implements Serializable {
+public class CountryDTO implements Serializable{
 	private int id;
 	private String name;
 	private int code;
-	private String capital;
-
-	public StateDTO() {
+	private String continent;
+	
+	public CountryDTO() {
 		System.out.println("invoked no args const");
 	}
 
-	public StateDTO(int id, String name, int code, String capital) {
+	public CountryDTO(int id, String name, int code, String continent) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.code = code;
-		this.capital = capital;
+		this.continent = continent;
 	}
 
 	@Override
 	public String toString() {
-		return "StateDTO [id=" + id + ", name=" + name + ", code=" + code + ", capital=" + capital + "]";
+		return "CountryDTO [id=" + id + ", name=" + name + ", code=" + code + ", continent=" + continent + "]";
 	}
 
 	public int getId() {
@@ -49,12 +49,13 @@ public class StateDTO implements Serializable {
 		this.code = code;
 	}
 
-	public String getCapital() {
-		return capital;
+	public String getContinent() {
+		return continent;
 	}
 
-	public void setCapital(String capital) {
-		this.capital = capital;
+	public void setContinent(String continent) {
+		this.continent = continent;
 	}
+	
 
 }
