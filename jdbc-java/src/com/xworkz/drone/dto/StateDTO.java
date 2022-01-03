@@ -1,4 +1,4 @@
-package com.xworkz.jdbc.dto;
+package com.xworkz.drone.dto;
 
 import java.io.Serializable;
 

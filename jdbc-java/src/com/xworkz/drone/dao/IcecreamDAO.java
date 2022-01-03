@@ -82,7 +82,7 @@ public class IcecreamDAO {
 		try {
 			mysql=DBUtil.createConnection();
 			
-			String sql="SELECT * FROM icecream_details where country_id=?";
+			String sql="SELECT * FROM icecream_details where c_id=?";
 			PreparedStatement stat=mysql.prepareStatement(sql);
 			stat.setObject(2, id);
 			ResultSet rs=stat.executeQuery();
