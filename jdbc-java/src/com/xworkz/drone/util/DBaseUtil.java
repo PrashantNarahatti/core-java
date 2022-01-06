@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import com.xworkz.drone.constant.TrainConstant;
 
-
 public class DBaseUtil {
 
 	public static Connection createConnection() {

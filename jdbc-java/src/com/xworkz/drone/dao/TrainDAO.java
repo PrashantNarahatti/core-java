@@ -241,28 +241,27 @@ public class TrainDAO {
 		return false;
 
 	}
-	
-	public Collection<TrainDTO> getAll()
-	{
-		Connection mysql=null;
-		mysql=DBaseUtil.createConnection();
-		Collection<TrainDTO> details=new ArrayList<TrainDTO>();
-		TrainDTO dto=new TrainDTO();
+
+	public Collection<TrainDTO> getAll() {
+		Connection mysql = null;
+		mysql = DBaseUtil.createConnection();
+		Collection<TrainDTO> details = new ArrayList<TrainDTO>();
+		
 		try {
-			String sql="SELECT * FROM train_details";
-			PreparedStatement stat=mysql.prepareStatement(sql);
-			ResultSet result=stat.executeQuery();
-			while(result.next())
-			{
-				int id=result.getInt(1);
-				int trainNo=result.getInt(2);
-				String boarding=result.getString(3);
-				String destination=result.getString(4);
-				int seatNo=result.getInt(5);
-				int price=result.getInt(6);
-				String classType=result.getString(7);
-				String name=result.getString(8);
-				
+			String sql = "SELECT * FROM train_details";
+			PreparedStatement stat = mysql.prepareStatement(sql);
+			ResultSet result = stat.executeQuery();
+			while (result.next()) {
+				TrainDTO dto = new TrainDTO();
+				int id = result.getInt(1);
+				int trainNo = result.getInt(2);
+				String boarding = result.getString(3);
+				String destination = result.getString(4);
+				int seatNo = result.getInt(5);
+				int price = result.getInt(6);
+				String classType = result.getString(7);
+				String name = result.getString(8);
+
 				dto.setId(id);
 				dto.setTrainNo(trainNo);
 				dto.setBoarding(boarding);
@@ -271,209 +270,170 @@ public class TrainDAO {
 				dto.setPrice(price);
 				dto.setClassType(classType);
 				dto.setName(name);
-				
+
 				details.add(dto);
-				
-				System.out.println("Train_id- "+id+" "+"Train_No- "+trainNo+" "+"boarding- "+boarding+" "+"destination- "+destination+"  "+"Seat No- "+seatNo+"  "+"Ticket Price- "+price+"  "+"Class- "+classType+"  "+"name- "+name);
-		      }
-			}  
-		catch (SQLException e) 
-		{
+
+				System.out.println(dto);
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		finally {
-			if(mysql!=null)
-			{
+			if (mysql != null) {
 				try {
 					mysql.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
-				catch (SQLException e) {
-                   e.printStackTrace();
-				}
-				
+
 			}
 		}
-			
+
 		return details;
 	}
-	
-	public Collection<TrainDTO> getAllByBoarding(String boarding)
-	{
-		Connection mysql=null;
-		Collection<TrainDTO> details=new ArrayList<TrainDTO>();
-		TrainDTO dtos=new TrainDTO();
-		try
-		{
-			mysql=DBaseUtil.createConnection();
-			String sql="SELECT * boarding train_details";
-			PreparedStatement pstmt=mysql.prepareStatement(sql);
-			ResultSet rs=pstmt.executeQuery();
-			while(rs.next())
-			{
-				String t_boarding=rs.getString(boarding);
-				
+
+	public Collection<TrainDTO> getAllByBoarding(String boarding) {
+		Connection mysql = null;
+		Collection<TrainDTO> details = new ArrayList<TrainDTO>();
+		TrainDTO dtos = new TrainDTO();
+		try {
+			mysql = DBaseUtil.createConnection();
+			String sql = "SELECT * boarding train_details";
+			PreparedStatement pstmt = mysql.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				String t_boarding = rs.getString(boarding);
+
 				dtos.setBoarding(t_boarding);
 				details.add(dtos);
 			}
-		
-		} 
-		catch (SQLException e) 
-		{
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			if(mysql!=null)
-			{
+		} finally {
+			if (mysql != null) {
 				try {
 					mysql.close();
-				} 
-				catch (SQLException e) 
-				{
-                    e.printStackTrace();
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
 			}
 		}
-		
-	return details;
-		
+
+		return details;
+
 	}
-	
-	public Collection<TrainDTO> getAllByDestination(String destination)
-	{
-		Connection mysql=null;
-		Collection<TrainDTO> details=new ArrayList<TrainDTO>();
-		TrainDTO dtos=new TrainDTO();
-		try
-		{
-			mysql=DBaseUtil.createConnection();
-			String sql="SELECT * destination train_details";
-			PreparedStatement pstmt=mysql.prepareStatement(sql);
-			ResultSet rs=pstmt.executeQuery();
-			while(rs.next())
-			{
-				String t_dest=rs.getString(destination);
-				
+
+	public Collection<TrainDTO> getAllByDestination(String destination) {
+		Connection mysql = null;
+		Collection<TrainDTO> details = new ArrayList<TrainDTO>();
+		TrainDTO dtos = new TrainDTO();
+		try {
+			mysql = DBaseUtil.createConnection();
+			String sql = "SELECT * destination train_details";
+			PreparedStatement pstmt = mysql.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				String t_dest = rs.getString(destination);
+
 				dtos.setBoarding(t_dest);
 				details.add(dtos);
 			}
-		
-		} 
-		catch (SQLException e) 
-		{
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		finally
-		{
-			if(mysql!=null)
-			{
+		} finally {
+			if (mysql != null) {
 				try {
 					mysql.close();
-				} 
-				catch (SQLException e) 
-				{
-                    e.printStackTrace();
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
 			}
 		}
 		return details;
-		
+
 	}
-	public int getTotal()
-	{
-		Connection mysql=null;
-		
-		try
-		{
-			mysql=DBaseUtil.createConnection();
-			String sql="SELECT cou * FROM train_details";
-			PreparedStatement pstmt=mysql.prepareStatement(sql);
-			ResultSet rs=pstmt.executeQuery();
-			while(rs.next())
-			{
-				int rows=rs.getRow();
-				System.out.println("total rows in table is:" +rows);
-				
+
+	public int getTotal() {
+		Connection mysql = null;
+
+		try {
+			mysql = DBaseUtil.createConnection();
+			String sql = "SELECT count(*) FROM train_details";
+			PreparedStatement pstmt = mysql.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int rows = rs.getInt(1);
+				System.out.println("total rows in table is:" + rows);
+
 			}
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
-		}
-		finally
-		{
-			if(mysql!=null)
-			{
+		} finally {
+			if (mysql != null) {
 				try {
 					mysql.close();
-				} catch (SQLException e) 
-				{
+				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
 		}
 		return 0;
-		
-	}
-	public double getMaxPrice()
-	{
-		Connection mysql = DBaseUtil.createConnection();
-		double maxPrice=0;
-		
-	try {
-			
 
-			String sql="select max(t_price) from train_details";
-			PreparedStatement stat=mysql.prepareStatement(sql);
-			ResultSet result=stat.executeQuery();
-			while(result.next())
-			{
-				 maxPrice=result.getDouble(1);
-				System.out.println("MaxPrice= "+maxPrice);
+	}
+
+	public double getMaxPrice() {
+		Connection mysql = DBaseUtil.createConnection();
+		double maxPrice = 0;
+
+		try {
+
+			String sql = "select max(t_price) from train_details";
+			PreparedStatement stat = mysql.prepareStatement(sql);
+			ResultSet result = stat.executeQuery();
+			while (result.next()) {
+				maxPrice = result.getDouble(1);
+				System.out.println("MaxPrice= " + maxPrice);
 			}
-			
-			
-			
-		}  catch (SQLException e) {
+
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			DBaseUtil.closeConnection(mysql);
 		}
-		
+
 		return maxPrice;
 	}
 
-	public double getMinPrice()
-	{
+	public double getMinPrice() {
 		Connection mysql = DBaseUtil.createConnection();
-		double minPrice=0;
-		
-	try {
-			
+		double minPrice = 0;
 
-			String sql="select min(t_price) from train_details";
-			PreparedStatement stat=mysql.prepareStatement(sql);
-			ResultSet result=stat.executeQuery();
-			while(result.next())
-			{
-				 minPrice=result.getDouble(1);
-				System.out.println("MinPrice= "+minPrice);
+		try {
+
+			String sql = "select min(t_price) from train_details";
+			PreparedStatement stat = mysql.prepareStatement(sql);
+			ResultSet result = stat.executeQuery();
+			while (result.next()) {
+				minPrice = result.getDouble(1);
+				System.out.println("MinPrice= " + minPrice);
 			}
-			
-			
-			
-		}  catch (SQLException e) {
+
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		finally {
 			DBaseUtil.closeConnection(mysql);
 		}
-		
+
 		return minPrice;
 	}
 }
